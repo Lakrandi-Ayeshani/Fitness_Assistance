@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/", exerciseRouter)
+app.use("/api", exerciseRouter)
 
 const MONGO_URL = "mongodb+srv://lakrandiayeshani1204:MERNpassword123@cluster0.ubbizur.mongodb.net/fitnessAssistance?retryWrites=true&w=majority";
 
