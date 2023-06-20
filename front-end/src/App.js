@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import { SideBar } from './Pages/SideBar';
 import { Dashboard } from './Pages/dashboard';
 import { Exercise } from './Pages/exercise';
-import './app.css';
+import './App.css';
 
 function App() {
   return (
