@@ -96,7 +96,7 @@ router.delete("/exercise/:exerciseID" , async(req, res) => {
     const exerciseId = req.params.exerciseID; 
     const  response = await exerciseModel.findByIdAndDelete(exerciseId);
     try {
-        res.send("Deleted : ", response);
+        res.send(response);
     }
     catch(err) {
         res.send(err);
