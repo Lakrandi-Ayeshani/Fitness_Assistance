@@ -19,7 +19,6 @@ const DeletePopup = ({isOpen, onClose, selectedExercise}) => {
                     <Modal.Title>Are you sure you want to delete this exercise?</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-
                     <h4>{selectedExercise?.name}</h4>
                     <h4>{selectedExercise?.description}</h4>
                 </Modal.Body>
