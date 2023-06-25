@@ -1,9 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchAllExercise = createAsyncThunk("/exercise",async() => {
+const exerciseURL = "http://localhost:8000/api/exercise";
+
+export const fetchAllExercise = createAsyncThunk("exercise/fetchAll",async() => {
         try {
-            const response = await axios.get("http://localhost:8000/api/exercise")
+            const response = await axios.get(exerciseURL)
             return response.data;
         }
         catch (err) {
@@ -11,9 +13,9 @@ export const fetchAllExercise = createAsyncThunk("/exercise",async() => {
         }    
 });
 
-export const DeleteById = createAsyncThunk("/exercise/:ID", async(ID) => {
+export const deleteById = createAsyncThunk("exercise/deleteByID", async(ID) => {
     try {
-        const response = await axios.delete(`http://localhost:8000/api/exercise/${ID}`);
+        const response = await axios.delete(`${exerciseURL}/${ID}`);
         return response.data;
     }
     catch (err) {
@@ -41,7 +43,7 @@ export const exerciseSlice = createSlice({
             state.exercises = payload;
         });
 
-        builder.addCase(DeleteById.fulfilled, (state, action) => {
+        builder.addCase(deleteById.fulfilled, (state, action) => {
             // console.group("action meta values");
             // console.log(action.meta.arg);
             // console.log(action.meta.requestId);
