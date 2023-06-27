@@ -41,7 +41,7 @@ router.post("/exercise", async (req, res) => {
                 exercise.save()
                 res.json(exercise);
             }
-            res.send("please added description to exercise");
+            res.json({field: "description" , message: "please added description to exercise"});
         }
         res.send("plaese added exercise name");
     }
@@ -124,7 +124,7 @@ router.put("/exercise/:exerciseID", async(req, res) => {
     const updateExercise = req.body;
     try {
         const response = await exerciseModel.findByIdAndUpdate(exerciseId, updateExercise);
-        res.send(response);
+        res.json(response);
     }
     catch(err) {
         res.send(err);
