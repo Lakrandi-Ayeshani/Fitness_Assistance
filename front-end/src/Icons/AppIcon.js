@@ -3,12 +3,11 @@ const AppIcon = () => {
         <svg 
             version="1.1" 
             xmlns="http://www.w3.org/2000/svg" 
-            // xmlns:xlink="http://www.w3.org/1999/xlink" 
             x="0px" 
             y="0px" 
             viewBox="0 0 1000 1000" 
             enableBackground="new 0 0 1000 1000" 
-            // xml:space="preserve"
+            fill="var(--app-platinum)"
         >
             <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
             <g>

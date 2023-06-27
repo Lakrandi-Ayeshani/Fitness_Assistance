@@ -1,13 +1,41 @@
+* {
+    --app-dark-blue-900: #24344c;
+    --app-dark-blue-700: #2a3c58;
+    /* --app-rich-black: #0d1b2aff; */
+    /* --app-oxford-blue: #1b263bff;
+    --app-yinmn-blue: #415a77ff; */
+    /* --app-silver-lake-blue: #778da9ff; */
+    --app-platinum: #e0e1ddff;
+}
+
+.col-sidebar {
+    background-color: var(--app-dark-blue-900);
+}
+
 .sidebar {
     height: 100vh;
 }
 
-
-.col-sidebar {
-    background-color: aqua;
-    height: 100vh ;
-}
-
 .sidebar-link {
     text-decoration: none;
+}
+
+.sidebar-row-header {
+    height: 30vh;
+    color: var(--app-platinum);
+    font-size: 1.5rem;
+}
+
+.sidebar-row-menu {
+    height: 30vh;
+    background-color: var(--app-dark-blue-700);
+}
+
+.sidebar-row-footer {
+    height: 30vh;
+}
+
+.sidebar-header-app-icon {
+    width: 30%;
+    height: 30%;
 }
