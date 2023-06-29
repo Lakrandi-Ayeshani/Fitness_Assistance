@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/esm/Button";
+import Card from "react-bootstrap/Card"
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addExercise, editExercise } from "../Slice/exerciseSlice";

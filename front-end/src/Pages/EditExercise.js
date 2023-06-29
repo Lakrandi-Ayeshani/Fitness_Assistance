@@ -17,7 +17,7 @@ const EditExercise = () => {
     }, [])
 
     return (
-        <div>
+        <div className="exerciseForm">
             {fetchedExerciseById === null ? (
                 <Spinner animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
