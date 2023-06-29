@@ -1,6 +1,7 @@
 * {
     --app-dark-blue-900: #24344c;
     --app-dark-blue-700: #2a3c58;
+    --app-dark-blue-500: #394e69;
     /* --app-rich-black: #0d1b2aff; */
     /* --app-oxford-blue: #1b263bff;
     --app-yinmn-blue: #415a77ff; */
@@ -16,8 +17,12 @@
     height: 100vh;
 }
 
-.sidebar-link {
+.sidebar-menu-link {
     text-decoration: none;
+    color: var(--app-platinum);
+    display: block;
+    background-color: var(--app-dark-blue-700);
+    height: 2rem;
 }
 
 .sidebar-row-header {
@@ -27,8 +32,8 @@
 }
 
 .sidebar-row-menu {
-    height: 30vh;
-    background-color: var(--app-dark-blue-700);
+    height: 40vh;
+    /* background-color: var(--app-dark-blue-700); */
 }
 
 .sidebar-row-footer {
@@ -36,6 +41,15 @@
 }
 
 .sidebar-header-app-icon {
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
 }
+
+.sidebar-footer-link {
+    font-size: 1rem;
+}
+
+.exerciceForm {
+    height: 100vh;
+}
+

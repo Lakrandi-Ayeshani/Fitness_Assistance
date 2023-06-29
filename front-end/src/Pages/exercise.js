@@ -39,7 +39,7 @@ const handleAddExercise = () => {
 }
 
     return (
-        <div>
+        <div className="exercise">
             <Button variant="primary" onClick={handleAddExercise}> Add exercise</Button>
             {fetchedAllExercises.map((exer) => (
                 <Card style={{width: "18rem"}} key={exer._id}>
