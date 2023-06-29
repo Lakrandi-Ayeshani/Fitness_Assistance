@@ -9,7 +9,6 @@ import { Exercise } from './Pages/exercise';
 import './App.css';
 import DeletePopup from './Component/DeletePopup';
 import AddExercise from './Pages/AddExercise';
-import ExerciseForm from './Component/ExerciseForm';
 import EditExercise from './Pages/EditExercise';
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
       <Container fluid className="app-container">
         <BrowserRouter>
           <Row>
-            <Col xs={4} className="col-sidebar">
+            <Col xs={4} xl={3} className="col-sidebar">
               <SideBar/>
             </Col>
             <Col className="col-content">
