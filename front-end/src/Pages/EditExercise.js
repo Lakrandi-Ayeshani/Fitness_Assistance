@@ -23,7 +23,7 @@ const EditExercise = () => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
             ) : (
-                <Row className="exercise-form-row">
+                <Row className="exercise-form-row justify-content-center">
                     <Col className="exercise-form-col align-self-center">
                         <ExerciseForm mode="Edit" selectedExercise={fetchedExerciseById}/>
                     </Col>

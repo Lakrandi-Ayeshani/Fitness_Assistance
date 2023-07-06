@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import Card from "react-bootstrap/Card"
-import Button from "react-bootstrap/esm/Button";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card"
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -37,6 +37,10 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
        setExerciseData(selectedExercise);
     };
 
+    const handleHome = () => {
+        navigate("/")
+    }
+ 
     useEffect(() => {
         if(mode === "Edit" && exerciseData.name === "" ) {
             handleEditFiller();
@@ -45,12 +49,13 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
 
     return (
         <Card className="exercise-form-card">
-            <Form onSubmit={handleSubmit}> 
-                <h3><b>{mode === "Add" ? "Add Exercise" : "Edit Exercise"}</b></h3>
-                <Row>
+            <Form onSubmit={handleSubmit} className="exercise-form-form"> 
+                <h3 className="text-center"><b>{mode === "Add" ? "Add Exercise" : "Edit Exercise"}</b></h3>
+                <Row className="my-4">
                     <Form.Group controlId="formGroupName">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label className="exercise-form-control">Name</Form.Label>
                         <Form.Control
+                            className="exercise-form-control"
                             placeholder="enter exercise name"
                             onChange={handleChange}
                             name="name"
@@ -58,10 +63,11 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
                         />
                     </Form.Group>
                 </Row>
-                <Row>
+                <Row className="my-4">
                     <Form.Group controlId="formGroupName">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
+                        <Form.Label className="exercise-form-control">Description</Form.Label>
+                        <Form.Control 
+                            className="exercise-form-control"
                             placeholder="enter exercise description"
                             onChange={handleChange}
                             name="description"
@@ -69,8 +75,12 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
                         />
                     </Form.Group>
                 </Row>
-                <Button variant="light" type="submit" ><Link to="/" style={{textDecoration:"none"}}>Back Home</Link></Button>
-                <Button type="submit" >Submit</Button>
+                <Row className="justify-content-end">
+                    <Col className="exercise-form-col-button">
+                        <Button className="button-hover color-1 home-button mx-1" type="submit" onClick={handleHome}>Back</Button>
+                        <Button className="button-hover color-2 submit-button" type="submit" >Submit</Button>
+                    </Col>
+                </Row>
             </Form>
         </Card>
     )

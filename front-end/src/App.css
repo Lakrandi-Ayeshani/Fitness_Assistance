@@ -2,12 +2,19 @@
     --app-dark-blue-900: #24344c;
     --app-dark-blue-700: #2a3c58;
     --app-dark-blue-500: #394e69;
+    --app-dark-blue-300: #176B87;
+    /* --app-dark-blue-200: #48abcc; */
+    --app-light-blue-700: #0d6bf4;
+    --app-light-blue-100: #9fbae3;
+    --app-tuple-gray: #9999a1;
     /* --app-rich-black: #0d1b2aff; */
-    /* --app-oxford-blue: #1b263bff;
-    --app-yinmn-blue: #415a77ff; */
-    /* --app-silver-lake-blue: #778da9ff; */
+    /* --app-oxford-blue: #1b263bff; */
+    /* --app-yinmn-blue: #415a77ff; */
+    --app-silver-lake-blue: #778da9ff;
     --app-platinum: #e0e1ddff;
 }
+
+/* sidebar style */
 
 .col-sidebar {
     background-color: var(--app-dark-blue-900);
@@ -25,9 +32,6 @@
     height: 2rem;
 }
 
-.exercise-form-row {
-    height: 100vh;
-}
 .sidebar-row-header {
     height: 30vh;
     color: var(--app-platinum);
@@ -36,7 +40,6 @@
 
 .sidebar-row-menu {
     height: 40vh;
-    /* background-color: var(--app-dark-blue-700); */
 }
 
 .sidebar-row-footer {
@@ -52,7 +55,115 @@
     font-size: 1rem;
 }
 
+/* exercise form style */
+
+.exercise-form-row {
+    height: 100vh;
+    background-color: var(--app-platinum);
+}
+
 .exerciceForm {
     height: 100vh;
 }
 
+.exercise-form-card {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 1rem;;
+    /* border: 1rem solid #dae9ff; */
+    outline: 5px solid var(--app-light-blue-100);
+    outline-offset: -15px;
+}
+
+.exercise-form-col-button {
+    max-width: fit-content;
+}
+
+.exercise-form-control {
+    color: var(--app-dark-blue-300);
+    font-weight: 600;
+}
+
+.exercise-form-control:focus {
+    color: var(--app-dark-blue-300);
+}
+
+.exercise-form-control::placeholder {
+    color: var(--app-silver-lake-blue);
+    font-weight: 300;
+}
+
+/* exercise page styles */
+
+.col-content {
+    background-color: var(--app-platinum);
+}
+
+@media only screen and (max-width: 576px) {
+    .exercise-form-card {
+      width: 100%;  
+    }
+}
+@media only screen and (min-width: 576px) {
+    .exercise-form-card {
+      width: 80%;  
+    }
+}
+@media only screen and (min-width: 768px) {
+    .exercise-form-card {
+      width: 50%;  
+    }
+}
+
+h3 {
+    color: var(--app-dark-blue-500);
+}
+
+/* button styles */
+
+.button-hover {
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all .4s ease-in-out;
+}
+
+.button-hover:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.button-hover:focus {
+    outline: none;
+}
+
+.home-button {
+    background-image: linear-gradient(to right, var(--app-dark-blue-500), var(--app-dark-blue-300), var(--app-platinum), var(--app-dark-blue-300));
+    box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
+    color: white;
+}
+.button-hover.color-2 {
+    background-image: linear-gradient(to right, var(--app-light-blue-700), var(--app-light-blue-100), var(--app-platinum), var(--app-dark-blue-300));
+    box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
+}
+
+
+.home-button:hover {
+    background-color: var(--app-tuple-gray);
+}
+
+.submit-button{
+   background-color: var(--app-tuple-gray); 
+   color: white;
+
+}
+
+.submit-button:hover {
+    background-color: var(--app-dark-blue-500);
+}
