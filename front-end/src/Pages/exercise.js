@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllExercise } from 'Slice/exerciseSlice';
 import Card from 'react-bootstrap/Card';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import DeletePopup from 'Component/DeletePopup';
 import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/esm/Col';
+import Col from 'react-bootstrap/Col';
 
 export const Exercise = () => {
   const dispatch = useDispatch();

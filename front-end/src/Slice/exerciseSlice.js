@@ -79,7 +79,6 @@ export const exerciseSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchAllExercise.fulfilled, (state, { payload }) => {
-      console.log(`payload: ${payload}`);
       state.exercises = payload;
     });
 

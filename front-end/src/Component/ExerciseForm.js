@@ -6,7 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addExercise, editExercise } from '../Slice/exerciseSlice';
+import { addExercise, editExercise } from 'Slice/exerciseSlice';
+import PropTypes from 'prop-types';
 
 const ExerciseForm = ({ mode, selectedExercise }) => {
   const navigate = useNavigate();
@@ -94,6 +95,15 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
       </Form>
     </Card>
   );
+};
+
+ExerciseForm.propTypes = {
+  mode: PropTypes.oneOf(['Add', 'Edit']).isRequired,
+  selectedExercise: PropTypes.object,
+};
+
+ExerciseForm.defaultProps = {
+  selectedExercise: null,
 };
 
 export default ExerciseForm;

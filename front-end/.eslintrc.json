@@ -42,7 +42,7 @@
       "quotes": ["error", "single", { "avoidEscape": true }],
       "semi": ["error", "always"],
       "no-trailing-spaces": "error",
-      "no-console": "error",
+      "no-console": ["error", { "allow": ["error"] }],
       "no-unused-vars": [
         "error",
         {

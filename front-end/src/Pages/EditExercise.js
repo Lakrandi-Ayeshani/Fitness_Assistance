@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ExerciseForm from '../Component/ExerciseForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -12,6 +12,7 @@ const EditExercise = () => {
   const { exerciseID } = useParams();
   const fetchedExerciseById = useSelector(
     (state) => state.Exercise.selectedExercise
+  );
 
   useEffect(() => {
     dispatch(fetchExerciseById(exerciseID));
