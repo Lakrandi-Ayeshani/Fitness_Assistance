@@ -130,6 +130,10 @@
     padding: 0.5rem;
 }
 
+.exercise-list-row {
+    box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
+}
+
 /* delete modal style */
 
 .exercise-delete-modal-title {
@@ -171,7 +175,7 @@ h3 {
 
 .button-hover:hover {
     background-position: 100% 0;
-    
+
 }
 
 .button-hover:focus {
