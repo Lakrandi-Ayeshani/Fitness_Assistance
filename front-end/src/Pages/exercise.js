@@ -41,22 +41,30 @@ const handleAddExercise = () => {
 }
 
     return (
-        <div className="exercise">
-            <Button variant="primary" onClick={handleAddExercise}> Add exercise</Button>
-            {fetchedAllExercises.map((exer) => (
-                <Card key={exer._id}>
-                    <Row>
-                        <Col><b>{exer.name}</b></Col>
-                        <Col>{exer.description}</Col>
-                        <Col>
-                            <Button  onClick={() => handleEdit(exer._id)}><i class="bi bi-pencil-square">edit</i></Button>
-                        </Col>
-                        <Col>                           
-                        <Button variant="danger" style={{textDecoration: "red"}} onClick={() => handleClick(exer)}><i class="bi bi-trash-fill">delete</i></Button> 
-                        </Col>
-                    </Row>
-                </Card>
-            ))}
+        <div className="exercise-list">
+            <h1 className='my-4'>Exercise List</h1> 
+            <Row className='mx-1'>
+                <Row className='justify-content-end mx-0 mb-1'>
+                    <Col className='exercise-form-col-addbutton'>
+                        <Button variant="primary" onClick={handleAddExercise} className='exercise-add-button submit-button button-hover'><i class="bi bi-file-earmark-plus-fill"></i> Add exercise</Button>
+                    </Col>
+                </Row>
+                {fetchedAllExercises.map((exer) => (
+                    <Card key={exer._id}>
+                        <Row className='exercise-list-row align-items-center' xs="auto">
+                            <Col xs={1} md={"auto"}><i class="bi bi-activity"></i></Col>
+                            <Col xs={2}><b>{exer.name}</b></Col>
+                            <Col xs={7} md={8} className='p-0'>{exer.description}</Col>
+                            <Col xs={1} md="auto" className='p-0'>
+                                <Button onClick={() => handleEdit(exer._id)} className="edit-button button-hover"><i class="bi bi-pencil-square"></i></Button>
+                            </Col>
+                            <Col xs={1} md="auto" className='p-0'>                           
+                                <Button onClick={() => handleClick(exer)} className="delete-button button-hover"><i class="bi bi-trash-fill"></i></Button> 
+                            </Col>
+                        </Row>
+                    </Card>
+                ))}
+            </Row>
             <DeletePopup isOpen={showDeleteModal} onClose={handleClose} selectedExercise={clickedExercise}/>
         </div>
     )

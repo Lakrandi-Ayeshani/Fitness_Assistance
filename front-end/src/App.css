@@ -12,6 +12,10 @@
     /* --app-yinmn-blue: #415a77ff; */
     --app-silver-lake-blue: #778da9ff;
     --app-platinum: #e0e1ddff;
+    --app-red: red;
+    --app-red-600: rgb(161, 20, 20);
+    /* --app-green: green; */
+    --app-green-300: rgb(22, 194, 22);
 }
 
 /* sidebar style */
@@ -80,6 +84,10 @@
     max-width: fit-content;
 }
 
+.exercise-form-col-addbutton {
+    max-width: fit-content;
+}
+
 .exercise-form-control {
     color: var(--app-dark-blue-300);
     font-weight: 600;
@@ -116,6 +124,35 @@
     }
 }
 
+/* exercise list style */
+
+.exercise-list-row {
+    padding: 0.5rem;
+}
+
+/* delete modal style */
+
+.exercise-delete-modal-title {
+    font-size: 1.2rem;
+    color: var(--app-red-600);
+    font-weight: 600;
+}
+
+.exercise-delete-modal-col {
+    color: var(--app-dark-blue-500);
+}
+
+.exercise-delete-modal {
+    outline: 5px solid var(--app-red);
+    outline-offset: 10px;
+}
+
+h1 {
+    font-weight: 700;
+    color: var(--app-dark-blue-500);
+}
+
+
 h3 {
     color: var(--app-dark-blue-500);
 }
@@ -134,9 +171,7 @@ h3 {
 
 .button-hover:hover {
     background-position: 100% 0;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    
 }
 
 .button-hover:focus {
@@ -148,22 +183,33 @@ h3 {
     box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
     color: white;
 }
-.button-hover.color-2 {
+.submit-button {
     background-image: linear-gradient(to right, var(--app-light-blue-700), var(--app-light-blue-100), var(--app-platinum), var(--app-dark-blue-300));
     box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
 }
 
-
-.home-button:hover {
-    background-color: var(--app-tuple-gray);
+.exercise-add-button:hover {
+    color: var(--app-light-blue-700);
 }
 
-.submit-button{
-   background-color: var(--app-tuple-gray); 
-   color: white;
-
+.popup-delete-button {
+    background-image: linear-gradient(to right, var(--app-red-600), var(--app-red), var(--app-platinum), var(--app-red));
+    box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
 }
 
-.submit-button:hover {
-    background-color: var(--app-dark-blue-500);
+.edit-button {
+    background-color: transparent;
+    color: var(--app-green-300);
+}
+
+.edit-button:hover {
+    background-color: var(--app-green-300);
+}
+
+.delete-button {
+    background-color: transparent;
+    color: var(--app-red);
+}
+.delete-button:hover {
+    background-color: var(--app-red);
 }

@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { deleteById } from "../Slice/exerciseSlice";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 
 const DeletePopup = ({isOpen, onClose, selectedExercise}) => {
 
@@ -14,17 +16,21 @@ const DeletePopup = ({isOpen, onClose, selectedExercise}) => {
 
     return (
         <div>
-            <Modal show={isOpen} onHide={onClose}>
+            <Modal show={isOpen} onHide={onClose} className="exercise-delete-modal">
                 <Modal.Header>
-                    <Modal.Title>Are you sure you want to delete this exercise?</Modal.Title>
+                    <Modal.Title className="exercise-delete-modal-title">Are you sure you want to delete this exercise?</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>{selectedExercise?.name}</h4>
-                    <h4>{selectedExercise?.description}</h4>
+                    <Row className="mx-2">
+                        <Col xs={3} className="exercise-delete-modal-col"><b>Name</b></Col>
+                        <Col xs={9} className="exercise-delete-modal-col">{selectedExercise?.name}</Col>
+                        <Col xs={3} className="exercise-delete-modal-col"><b>Description</b></Col>
+                        <Col xs={9} className="exercise-delete-modal-col">{selectedExercise?.description}</Col>
+                    </Row>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={onClose}>Close</Button>
-                    <Button variant="secondary" onClick={handleDelete}>Delete</Button>
+                    <Button variant="secondary" onClick={onClose} className="home-button button-hover">Close</Button>
+                    <Button variant="secondary" onClick={handleDelete}className="popup-delete-button button-hover">Delete</Button>
                 </Modal.Footer>
             </Modal>
         </div>

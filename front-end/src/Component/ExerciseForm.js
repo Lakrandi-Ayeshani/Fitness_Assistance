@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addExercise, editExercise } from "../Slice/exerciseSlice";
 
@@ -77,8 +77,8 @@ const ExerciseForm = ({ mode, selectedExercise }) => {
                 </Row>
                 <Row className="justify-content-end">
                     <Col className="exercise-form-col-button">
-                        <Button className="button-hover color-1 home-button mx-1" type="submit" onClick={handleHome}>Back</Button>
-                        <Button className="button-hover color-2 submit-button" type="submit" >Submit</Button>
+                        <Button className="button-hover home-button mx-1" type="submit" onClick={handleHome}>Back</Button>
+                        <Button className="button-hover submit-button" type="submit" >Submit</Button>
                     </Col>
                 </Row>
             </Form>
