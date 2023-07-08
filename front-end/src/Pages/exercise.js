@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAllExercise } from '../Slice/exerciseSlice';
+import { fetchAllExercise } from 'Slice/exerciseSlice';
 import Card from "react-bootstrap/Card";
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
-import DeletePopup from '../Component/DeletePopup';
+import DeletePopup from 'Component/DeletePopup';
 import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/esm/Col';
