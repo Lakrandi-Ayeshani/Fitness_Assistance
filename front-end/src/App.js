@@ -17,7 +17,7 @@ function App() {
       <Container fluid className="app-container">
         <BrowserRouter>
           <Row>
-            <Col xs={4} xl={3} className="col-sidebar">
+            <Col xs={4} md={3} className="col-sidebar">
               <SideBar/>
             </Col>
             <Col className="col-content">

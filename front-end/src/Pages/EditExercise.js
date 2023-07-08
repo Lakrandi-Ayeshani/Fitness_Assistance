@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchExerciseById } from "../Slice/exerciseSlice";
 import Spinner from 'react-bootstrap/Spinner';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const EditExercise = () => {
     const dispatch = useDispatch();
@@ -21,7 +23,11 @@ const EditExercise = () => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
             ) : (
-                <ExerciseForm mode="Edit" selectedExercise={fetchedExerciseById}/>
+                <Row className="exercise-form-row justify-content-center">
+                    <Col className="exercise-form-col align-self-center">
+                        <ExerciseForm mode="Edit" selectedExercise={fetchedExerciseById}/>
+                    </Col>
+                </Row>
             )}
         </div>
     )
