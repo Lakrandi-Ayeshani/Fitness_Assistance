@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { SideBar } from './Pages/SideBar';
 import { Dashboard } from './Pages/dashboard';
 import { Exercise } from './Pages/exercise';
@@ -18,15 +18,18 @@ function App() {
         <BrowserRouter>
           <Row>
             <Col xs={4} md={3} className="col-sidebar">
-              <SideBar/>
+              <SideBar />
             </Col>
             <Col className="col-content">
-              <Routes>         
-                <Route path="/" element={<Dashboard/>}/>
-                <Route path="/exercise" element={<Exercise/>} />
-                <Route path="/popup" element={<DeletePopup/>}/>
-                <Route path="/addExercise" element={<AddExercise/>}/>
-                <Route path="/editExercise/:exerciseID" element={<EditExercise/>}/>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/exercise" element={<Exercise />} />
+                <Route path="/popup" element={<DeletePopup />} />
+                <Route path="/addExercise" element={<AddExercise />} />
+                <Route
+                  path="/editExercise/:exerciseID"
+                  element={<EditExercise />}
+                />
               </Routes>
             </Col>
           </Row>
