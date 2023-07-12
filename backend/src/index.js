@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api", exerciseRouter)
+app.use("/api/exercise", exerciseRouter)
 
 async function ConnectDB() {
     await mongoose.connect(process.env.MONGO_URL);
