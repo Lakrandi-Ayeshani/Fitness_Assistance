@@ -36,14 +36,15 @@ const createWorkout = (async (req, res) => {
         if(req.body.name != null){
             if(req.body.description != null){
                 workout.save()
-                res.json(workout);
+                res.json(" workout added successfully!");
+                console.log("heloooooo5");
             }
             res.json({field: "description" , message: "please added description to workout"});
         }
         res.send("plaese added workout name");
     }
     catch(err) {
-        console.error(err, "hrttttttt");
+        console.error(err);
     }
 });
 
