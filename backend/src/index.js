@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const { exerciseRouter } = require("../src/routes/exercise");
+const { exerciseRouter } = require("../src/routes/exercise.js");
+const { workoutRouter } = require("../src/routes/workout.js");
 require('dotenv').config();
 
 const app = express();
@@ -9,7 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/exercise", exerciseRouter)
+app.use("/api/exercise", exerciseRouter);
+app.use("/api/workout", workoutRouter);
 
 async function ConnectDB() {
     await mongoose.connect(process.env.MONGO_URL);

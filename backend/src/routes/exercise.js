@@ -6,7 +6,7 @@ const {
     createExercise,
     deleteExercise,
     updateExercise
-} = require('../controllers/exercise');
+} = require('../controllers/exercise.js');
 
 router.get('/', getExercises);
 
