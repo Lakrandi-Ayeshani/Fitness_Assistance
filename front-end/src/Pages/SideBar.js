@@ -22,6 +22,9 @@ export const SideBar = () => {
           <Link className="sidebar-menu-link px-5 " to="/exercise">
             <i className="bi bi-command px-3"></i>Exercise
           </Link>
+          <Link className="sidebar-menu-link px-5 " to="/workout">
+            <i className="bi bi-reception-3 px-3"></i>Workout
+          </Link>
         </Col>
       </Row>
       <Row className="sidebar-row-footer">
