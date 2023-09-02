@@ -3,13 +3,17 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const { exerciseRouter } = require("../src/routes/exercise");
 require('dotenv').config();
+const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(express.json());
+const urlencodedParser = bodyParser.urlencoded({extend: false});
+
+app.use(bodyParser.json(), urlencodedParser);
 app.use(cors());
 
-app.use("/api/exercise", exerciseRouter)
+app.use("/api/exercise", exerciseRouter);
+
 
 async function ConnectDB() {
     await mongoose.connect(process.env.MONGO_URL);
