@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import PropTypes from 'prop-types';
 
-const DeletePopup = ({ isOpen, onClose, selectedExercise, resource }) => {
+const DeletePopup = ({ isOpen, onClose, selectedExercise }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -19,7 +19,7 @@ const DeletePopup = ({ isOpen, onClose, selectedExercise, resource }) => {
       <Modal show={isOpen} onHide={onClose} className="exercise-delete-modal">
         <Modal.Header>
           <Modal.Title className="exercise-delete-modal-title">
-            Are you sure you want to delete this {resource}?
+            Are you sure you want to delete this exercise?
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -63,7 +63,6 @@ DeletePopup.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   selectedExercise: PropTypes.object.isRequired,
-  resource: PropTypes.string.isRequired,
 };
 
 export default DeletePopup;

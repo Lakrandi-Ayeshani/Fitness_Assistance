@@ -5,14 +5,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { SideBar } from './Pages/SideBar';
 import { Dashboard } from './Pages/dashboard';
-import { Exercise } from 'Pages/exercise/exercise';
+import { Exercise } from './Pages/exercise';
 import './App.css';
 import DeletePopup from './Component/DeletePopup';
-import AddExercise from './Pages/exercise/AddExercise';
-import EditExercise from './Pages/exercise/EditExercise';
-import { Workout } from './Pages/workout/workout';
-import AddWorkout from 'Pages/workout/addWorkout';
-import EditWorkout from 'Pages/workout/editWorkout';
+import AddExercise from './Pages/AddExercise';
+import EditExercise from './Pages/EditExercise';
 
 function App() {
   return (
@@ -32,12 +29,6 @@ function App() {
                 <Route
                   path="/editExercise/:exerciseID"
                   element={<EditExercise />}
-                />
-                <Route path="/workout" element={<Workout />} />
-                <Route path="/addWorkout" element={<AddWorkout />} />
-                <Route
-                  path="/editWorkout/:workoutID"
-                  element={<EditWorkout />}
                 />
               </Routes>
             </Col>

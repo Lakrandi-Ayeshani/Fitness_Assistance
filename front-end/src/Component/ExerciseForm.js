@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { addExercise, editExercise } from 'Slice/exerciseSlice';
 import PropTypes from 'prop-types';
 
-const ExerciseForm = ({ mode, selectedExercise, resource }) => {
+const ExerciseForm = ({ mode, selectedExercise }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [exerciseData, setExerciseData] = useState({
@@ -50,9 +50,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
     <Card className="exercise-form-card">
       <Form onSubmit={handleSubmit} className="exercise-form-form">
         <h3 className="text-center">
-          <b>
-            {mode === 'Add' ? `${mode} ${resource}` : `${mode} ${resource}`}
-          </b>
+          <b>{mode === 'Add' ? 'Add Exercise' : 'Edit Exercise'}</b>
         </h3>
         <Row className="my-4">
           <Form.Group controlId="formGroupName">
@@ -102,7 +100,6 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
 ExerciseForm.propTypes = {
   mode: PropTypes.oneOf(['Add', 'Edit']).isRequired,
   selectedExercise: PropTypes.object,
-  resource: PropTypes.string.isRequired,
 };
 
 ExerciseForm.defaultProps = {

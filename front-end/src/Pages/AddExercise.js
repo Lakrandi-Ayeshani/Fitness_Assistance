@@ -1,12 +1,12 @@
-import Row from 'react-bootstrap/Row';
-import ExerciseForm from '../../Component/ExerciseForm';
-import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/esm/Row';
+import ExerciseForm from '../Component/ExerciseForm';
+import Col from 'react-bootstrap/esm/Col';
 
 const AddExercise = () => {
   return (
     <Row className="exercise-form-row justify-content-center">
       <Col className="exercise-form-col align-self-center">
-        <ExerciseForm mode="Add" resource="Exercise" />
+        <ExerciseForm mode="Add" />
       </Col>
     </Row>
   );
