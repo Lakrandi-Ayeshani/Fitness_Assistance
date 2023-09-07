@@ -6,34 +6,34 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addExercise, editExercise } from 'Slice/exerciseSlice';
+import { addExercise, editExercise as editWorkout } from 'Slice/exerciseSlice';
 import PropTypes from 'prop-types';
 
-const ExerciseForm = ({ mode, selectedExercise, resource }) => {
+const WorkoutForm = ({ mode, selectedWorkout, resource }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [exerciseData, setExerciseData] = useState({
+  const [workoutData, setWorkoutData] = useState({
     name: '',
     description: '',
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setExerciseData({ ...exerciseData, [name]: value });
+    setWorkoutData({ ...workoutData, [name]: value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (mode === 'Add') {
-      dispatch(addExercise(exerciseData));
+      dispatch(addExercise(workoutData));
     } else if (mode === 'Edit') {
-      dispatch(editExercise({ data: exerciseData, ID: selectedExercise._id }));
+      dispatch(editWorkout({ data: workoutData, ID: selectedWorkout._id }));
     }
     navigate('/');
   };
 
   const handleEditFiller = () => {
-    setExerciseData(selectedExercise);
+    setWorkoutData(selectedWorkout);
   };
 
   const handleHome = () => {
@@ -41,7 +41,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
   };
 
   useEffect(() => {
-    if (mode === 'Edit' && exerciseData.name === '') {
+    if (mode === 'Edit' && workoutData.name === '') {
       handleEditFiller();
     }
   });
@@ -52,7 +52,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
         <h3 className="text-center">
           <b>
             {mode === 'Add' ? `${mode} ${resource}` : `${mode} ${resource}`}
-          </b>
+          </b>{' '}
         </h3>
         <Row className="my-4">
           <Form.Group controlId="formGroupName">
@@ -62,7 +62,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
               placeholder="enter exercise name"
               onChange={handleChange}
               name="name"
-              value={exerciseData.name}
+              value={workoutData.name}
             />
           </Form.Group>
         </Row>
@@ -76,7 +76,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
               placeholder="enter exercise description"
               onChange={handleChange}
               name="description"
-              value={exerciseData.description}
+              value={workoutData.description}
             />
           </Form.Group>
         </Row>
@@ -99,14 +99,14 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
   );
 };
 
-ExerciseForm.propTypes = {
+WorkoutForm.propTypes = {
   mode: PropTypes.oneOf(['Add', 'Edit']).isRequired,
-  selectedExercise: PropTypes.object,
+  selectedWorkout: PropTypes.object,
   resource: PropTypes.string.isRequired,
 };
 
-ExerciseForm.defaultProps = {
-  selectedExercise: null,
+WorkoutForm.defaultProps = {
+  selectedWorkout: null,
 };
 
-export default ExerciseForm;
+export default WorkoutForm;
