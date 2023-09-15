@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addExercise, editExercise as editWorkout } from 'Slice/exerciseSlice';
+import { addExercise, editExercise as editWorkout } from 'slice/exerciseSlice';
 import PropTypes from 'prop-types';
 
 const WorkoutForm = ({ mode, selectedWorkout, resource }) => {
@@ -16,6 +16,9 @@ const WorkoutForm = ({ mode, selectedWorkout, resource }) => {
     name: '',
     description: '',
   });
+
+  // eslint-disable-next-line no-console
+  console.log(mode, 'heoooo');
 
   const handleChange = (event) => {
     const { name, value } = event.target;

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { deleteById } from 'Slice/exerciseSlice';
+import { deleteById } from 'slice/exerciseSlice';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import PropTypes from 'prop-types';

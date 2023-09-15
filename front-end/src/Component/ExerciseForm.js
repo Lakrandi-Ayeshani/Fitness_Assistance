@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addExercise, editExercise } from 'Slice/exerciseSlice';
+import { addExercise, editExercise } from 'slice/exerciseSlice';
 import PropTypes from 'prop-types';
 
 const ExerciseForm = ({ mode, selectedExercise, resource }) => {
@@ -22,6 +22,9 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
     setExerciseData({ ...exerciseData, [name]: value });
   };
 
+  // eslint-disable-next-line no-console
+  console.log(mode, 'heoooo');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (mode === 'Add') {
@@ -29,7 +32,7 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
     } else if (mode === 'Edit') {
       dispatch(editExercise({ data: exerciseData, ID: selectedExercise._id }));
     }
-    navigate('/');
+    navigate('/exercise');
   };
 
   const handleEditFiller = () => {
@@ -41,7 +44,11 @@ const ExerciseForm = ({ mode, selectedExercise, resource }) => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('helooo');
     if (mode === 'Edit' && exerciseData.name === '') {
+      // eslint-disable-next-line no-console
+      console.log('helooo');
       handleEditFiller();
     }
   });
