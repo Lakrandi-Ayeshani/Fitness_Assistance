@@ -1,27 +1,39 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Dashboard } from './Pages/dashboard';
-import { Exercise } from 'Pages/exercise/exercise';
+import { Dashboard } from './screens/dashboard';
+import { Exercise } from 'screens/exercise/exercise';
 import './App.css';
-import DeletePopup from './Component/DeletePopup';
-import AddExercise from './Pages/exercise/AddExercise';
-import EditExercise from './Pages/exercise/EditExercise';
-import { Workout } from './Pages/workout/workout';
-import AddWorkout from 'Pages/workout/addWorkout';
-import EditWorkout from 'Pages/workout/editWorkout';
-import { Login } from 'Pages/login';
-import { Register } from 'Pages/register';
-import SidebarLayout from 'Pages/sidebarLayout';
+import DeletePopup from './component/DeletePopup';
+import AddExercise from './screens/exercise/AddExercise';
+import EditExercise from './screens/exercise/EditExercise';
+import { Workout } from './screens/workout/workout';
+import AddWorkout from 'screens/workout/addWorkout';
+import EditWorkout from 'screens/workout/editWorkout';
+import { Login } from 'screens/login';
+import { Register } from 'screens/register';
+import LoginRegisterLayout from './layouts/LoginRegisterLayouts';
+import SidebarLayout from 'layouts/HomeScreensLayout';
+import AuthGuard from 'AuthGuard';
+import HeaderDisplay from 'screens/Header/HeaderDisplay';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route element={<SidebarLayout />}>
-            <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<LoginRegisterLayout />}>
+            <Route path="/" element={<HeaderDisplay />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
+          <Route
+            element={
+              <AuthGuard>
+                <SidebarLayout />
+              </AuthGuard>
+            }
+          >
+            <Route path="/home" element={<Dashboard />} />
             <Route path="/exercise" element={<Exercise />} />
             <Route path="/popup" element={<DeletePopup />} />
             <Route path="/addExercise" element={<AddExercise />} />
