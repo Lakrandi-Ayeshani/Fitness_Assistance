@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import ExerciseForm from '../Component/ExerciseForm';
+import ExerciseForm from '../../component/ExerciseForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchExerciseById } from '../Slice/exerciseSlice';
+import { fetchExerciseById } from '../../slice/exerciseSlice';
 import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,6 +13,8 @@ const EditExercise = () => {
   const fetchedExerciseById = useSelector(
     (state) => state.Exercise.selectedExercise
   );
+  // eslint-disable-next-line no-console
+  console.log(fetchExerciseById);
 
   useEffect(() => {
     dispatch(fetchExerciseById(exerciseID));
@@ -27,7 +29,11 @@ const EditExercise = () => {
       ) : (
         <Row className="exercise-form-row justify-content-center">
           <Col className="exercise-form-col align-self-center">
-            <ExerciseForm mode="Edit" selectedExercise={fetchedExerciseById} />
+            <ExerciseForm
+              mode="Edit"
+              selectedExercise={fetchedExerciseById}
+              resource="Exercise"
+            />
           </Col>
         </Row>
       )}

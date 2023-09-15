@@ -7,7 +7,6 @@ const createUser = ( async (req, res) => {
 
     const takenUsername = await userModel.findOne({username: user.username});
     const takenEmail = await userModel.findOne({email: user.email});
-    console.log(takenEmail, takenUsername);
 
     if (takenUsername || takenEmail) {
         res.json({message: "Username or Email has been already taken"});
@@ -24,8 +23,16 @@ const createUser = ( async (req, res) => {
     }
 });
 
+const getUser = ( async (req, res) => {
+    const userLoggingIn = req.user;
+
+    res.json('heloooo');
+});
+
+
 const loginUser = ( async (req, res) => {
     const userLoggingIn = req.body;
+    console.log(userLoggingIn);
     
     userModel.findOne({username: userLoggingIn.username})
     .then(userFetched => {
@@ -53,7 +60,6 @@ const loginUser = ( async (req, res) => {
                         })
                    }
                 )
-                console.log(process.env.JWT_SECRET)
             } else {
                 return res.json({
                     message: "Invalid Username or Password"
@@ -63,4 +69,10 @@ const loginUser = ( async (req, res) => {
     })
 })
 
-module.exports = { createUser, loginUser}
+const logoutUser = (req, res) => {
+    localStorage.removeItem('jwtToken');
+    res.status(200).json({message: "user logged out", isLoggedOut: true})
+}
+
+
+module.exports = { createUser, loginUser, getUser, logoutUser }
