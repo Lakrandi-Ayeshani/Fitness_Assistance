@@ -2,13 +2,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const workoutURL = 'http://localhost:8000/api/workout';
+const headers = {
+  'Content-type': 'application/json',
+  'x-access-token': localStorage.getItem('token'),
+};
 
 //  fetched All Workout
 export const fetchAllWorkout = createAsyncThunk(
   'workout/fetchAll',
   async () => {
     try {
-      const response = await axios.get(workoutURL);
+      const response = await axios.get(workoutURL, { headers });
       return response.data;
     } catch (err) {
       console.error(err);
@@ -20,7 +24,7 @@ export const fetchAllWorkout = createAsyncThunk(
 export const fetchWorkoutById = createAsyncThunk(
   'workout/fetchById',
   async (ID) => {
-    const response = await axios.get(`${workoutURL}/${ID}`);
+    const response = await axios.get(`${workoutURL}/${ID}`, { headers });
     return response.data;
   }
 );
@@ -30,7 +34,7 @@ export const deleteWorkoutById = createAsyncThunk(
   'workot/deleteByID',
   async (ID) => {
     try {
-      const response = await axios.delete(`${workoutURL}/${ID}`);
+      const response = await axios.delete(`${workoutURL}/${ID}`, { headers });
       return response.data;
     } catch (err) {
       console.error(err);
@@ -43,7 +47,7 @@ export const addWorkout = createAsyncThunk(
   'workout/adddWorkout',
   async (workoutData) => {
     try {
-      const response = await axios.post(workoutURL, workoutData);
+      const response = await axios.post(workoutURL, workoutData, { headers });
       return response.data;
     } catch (err) {
       console.error(err);
@@ -56,7 +60,9 @@ export const editWorkout = createAsyncThunk(
   'editWorkout/editByID',
   async ({ data, ID }) => {
     try {
-      const response = await axios.put(`${workoutURL}/${ID}`, data);
+      const response = await axios.put(`${workoutURL}/${ID}`, data, {
+        headers,
+      });
       return response.data;
     } catch (err) {
       console.error(err);

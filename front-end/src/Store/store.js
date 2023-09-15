@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import exerciseSlice from '../Slice/exerciseSlice';
-import workoutSlice from 'Slice/workoutSlice';
+import exerciseSlice from '../slice/exerciseSlice';
+import workoutSlice from '../slice/workoutSlice';
+import userReducer from '../slice/authSlice';
 
 export const store = configureStore({
   reducer: {
     Exercise: exerciseSlice,
     Workout: workoutSlice,
+    auth: userReducer,
   },
 });
