@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 function SidebarLayout() {
   return (
     <div className="App">
-      <Container fluid className="app-container">
+      <Container fluid className="app-container bg-black">
         <Row>
           <Col xs={4} md={3} className="col-sidebar">
             <SideBar />

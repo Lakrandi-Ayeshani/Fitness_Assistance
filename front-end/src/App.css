@@ -24,9 +24,13 @@
 /* Home style */
 
 .Home-header-app-icon {
-    width: 7rem;
+    width: 10rem;
     height: 10rem;
     color: red;
+}
+
+.navbar-header {
+  text-decoration:none;
 }
 
 .headerdisplay-card {
@@ -42,6 +46,21 @@
 .home-login-button {
     background-image: linear-gradient(to right, var(--app-blue), var(--app-light-blue-700), var(--app-platinum), var(--app-blue));
     box-shadow: 0 4px 15px 0 rgba(6, 7, 65, 0.5);
+}
+
+.logo-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.register-login-form-card {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 1rem;;
+    /* border: 1rem solid #dae9ff; */
+    outline: 5px solid var(--app-light-blue-100);
+    outline-offset: -15px;
 }
 
 /* sidebar style */

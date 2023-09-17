@@ -1,5 +1,5 @@
 import Row from 'react-bootstrap/Row';
-import WorkoutForm from '../../component/WorkoutFrom.js';
+import WorkoutForm from '../../component/WorkoutForm.js';
 import Col from 'react-bootstrap/Col';
 
 const AddWorkout = () => {

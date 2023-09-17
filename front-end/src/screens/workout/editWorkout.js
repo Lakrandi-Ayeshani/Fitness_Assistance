@@ -5,7 +5,7 @@ import { fetchWorkoutById } from '../../slice/workoutSlice';
 import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import WorkoutForm from '../../component/WorkoutFrom';
+import WorkoutForm from '../../component/WorkoutForm';
 
 const EditWorkout = () => {
   const dispatch = useDispatch();
