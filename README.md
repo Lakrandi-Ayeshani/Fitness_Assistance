@@ -1,4 +1,4 @@
-# TaskZen task management application
+# Fitness Assistant
 A web application developed by myself that allows the user to create and maintain a list of exercises and workout plans. The exercises can be combined to create workouts and fitness plans. includes custom-written CSS and JWT-based authentication
 
 ## Screenshots
