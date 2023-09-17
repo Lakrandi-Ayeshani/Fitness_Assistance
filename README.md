@@ -1,29 +1,40 @@
-# Fitness_Assistance
-simple web application build with MERN stack and redux
+# TaskZen task management application
+A web application developed by myself that allows the user to create and maintain a list of exercises and workout plans. The exercises can be combined to create workouts and fitness plans. includes custom-written CSS and JWT-based authentication
 
-# Screenshots
+## Screenshots
 
-Exercise Page
+### Exercise List Page View
 
-![Screenshot (281)](https://github.com/Lakrandi-Ayeshani/Fitness_Assistance/assets/58283952/934e1cc3-9e83-44e5-ab12-e9c3e8ca7cac)
+![Exercise List ProfilePage](docs/exerciseList.png)
 
+### Workout List Page View
 
-Delete Modal
+![Workout List ProfilePage](docs/workoutList.png)
 
-![Screenshot (289)](https://github.com/Lakrandi-Ayeshani/Fitness_Assistance/assets/58283952/2301e90e-2db4-42c9-bba6-573028c30ce7)
+### Add Exercise Page View
 
+![Add Exercise Page](docs/addExercise.png)
 
-Exercise Add Form
+### Add Exercise Page View
 
-![Screenshot (284)](https://github.com/Lakrandi-Ayeshani/Fitness_Assistance/assets/58283952/3d89efb0-9214-4522-b648-dea0ae4171c3)
+![Edit Exercise Page](docs/editExercise.png)
 
+### Add Exercise Page View
 
-Exercise Edit Form
+![Add Exercise Page](docs/addWorkout.png)
 
-![Screenshot (285)](https://github.com/Lakrandi-Ayeshani/Fitness_Assistance/assets/58283952/e0745f6b-a22e-4c81-a69d-be6cb76afd21)
+### DeletePopup View
 
+![Delete Popup Page](docs/deletePopup.png)
 
-Workout Page
+### Home Page View
 
-![Screenshot (287)](https://github.com/Lakrandi-Ayeshani/Fitness_Assistance/assets/58283952/6059073e-b04e-4c13-b9e9-c6c58e074ab8)
+![Home Page](docs/home.png)
 
+### Sign Up Page View
+
+![Sign Up Page](docs/registerForm.png)
+
+### Sign In Page View
+
+![Sign In Page](docs/loginForm.png)
